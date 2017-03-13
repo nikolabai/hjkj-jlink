@@ -6,17 +6,13 @@ import java.awt.Dimension;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.Border;
 
-import hjkj.ui.panel.ConfigAlarmPanel;
-import hjkj.ui.panel.ConfigInitPanel;
-import hjkj.ui.panel.ConfigSlotPanel;
-import hjkj.ui.panel.InfoNodePanel;
-import hjkj.ui.panel.InfoRcvPanel;
-import hjkj.ui.panel.ToolPanel;
+import hjkj.ui.panel.config.ConfigAlarmPanel;
+import hjkj.ui.panel.config.ConfigInitPanel;
+import hjkj.ui.panel.config.ConfigSlotPanel;
 import hjkj.util.WindowMethod;
 
 public class ConfigFrame {

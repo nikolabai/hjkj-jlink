@@ -1,4 +1,4 @@
-package hjkj.ui.panel;
+package hjkj.ui.panel.config;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;

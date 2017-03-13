@@ -1,4 +1,4 @@
-package hjkj.ui.panel;
+package hjkj.ui.panel.main;
 
 import javax.swing.JPanel;
 

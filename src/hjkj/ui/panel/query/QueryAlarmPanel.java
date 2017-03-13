@@ -1,16 +1,16 @@
-package hjkj.ui.panel;
+package hjkj.ui.panel.query;
 
 import java.awt.Color;
 
 import javax.swing.JPanel;
 
-public class AlarmQuerypanel extends JPanel {
+public class QueryAlarmPanel extends JPanel {
 	private JPanel backpane;
 	
 	
 	
 	
-	public AlarmQuerypanel(){
+	public QueryAlarmPanel(){
 		init();
 	}
 	

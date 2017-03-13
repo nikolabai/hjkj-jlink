@@ -3,18 +3,16 @@ package hjkj.ui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-import hjkj.ui.panel.AccessPanel;
-import hjkj.ui.panel.InfoNodePanel;
-import hjkj.ui.panel.InfoRcvPanel;
-import hjkj.ui.panel.ToolPanel;
+import hjkj.ui.panel.main.AccessPanel;
+import hjkj.ui.panel.main.InfoNodePanel;
+import hjkj.ui.panel.main.InfoRcvPanel;
+import hjkj.ui.panel.main.ToolPanel;
 import hjkj.util.WindowMethod;
 
 /**

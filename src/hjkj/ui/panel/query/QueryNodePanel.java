@@ -1,13 +1,13 @@
-package hjkj.ui.panel;
+package hjkj.ui.panel.query;
 
 import java.awt.Color;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class NodeStatusPanel extends	JPanel{
+public class QueryNodePanel extends	JPanel{
 	private JLabel label1;
-	public NodeStatusPanel(){
+	public QueryNodePanel(){
 		init();
 	}
 	

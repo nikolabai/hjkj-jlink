@@ -1,10 +1,9 @@
-package hjkj.ui.panel;
+package hjkj.ui.panel.config;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class ConfigAlarmPanel extends JPanel{
 

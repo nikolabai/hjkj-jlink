@@ -12,10 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 
-import hjkj.ui.panel.AlarmQuerypanel;
-import hjkj.ui.panel.LinkStatusPanel;
-import hjkj.ui.panel.NodeStatusPanel;
-import hjkj.ui.panel.PerformanceQueryPanel;
+import hjkj.ui.panel.query.QueryAlarmPanel;
+import hjkj.ui.panel.query.QueryLinkPanel;
+import hjkj.ui.panel.query.QueryNodePanel;
+import hjkj.ui.panel.query.QueryPerformancePanel;
 
 /**
  * 
@@ -87,13 +87,13 @@ public class QueryFrame extends JFrame implements ActionListener{
 		tabbedPane1.setBackground(Color.orange);
 		add(tabbedPane1,BorderLayout.CENTER);
 
-		NodeStatusPanel nodeStatusPanel =new NodeStatusPanel();
+		QueryNodePanel nodeStatusPanel =new QueryNodePanel();
 		tabbedPane1.addTab("节点状态",null, nodeStatusPanel,null);
-		LinkStatusPanel linkStatusPanel = new LinkStatusPanel();
+		QueryLinkPanel linkStatusPanel = new QueryLinkPanel();
 		tabbedPane1.addTab("链路状态",null, linkStatusPanel,null);
-		AlarmQuerypanel alarmQuerypanel = new AlarmQuerypanel();
+		QueryAlarmPanel alarmQuerypanel = new QueryAlarmPanel();
 		tabbedPane1.addTab("告警查询",null, alarmQuerypanel,null);
-		PerformanceQueryPanel performanceQueryPanel = new PerformanceQueryPanel();
+		QueryPerformancePanel performanceQueryPanel = new QueryPerformancePanel();
 		tabbedPane1.addTab("性能查询",null, performanceQueryPanel,null);
 	}
 	

@@ -1,16 +1,16 @@
-package hjkj.ui.panel;
+package hjkj.ui.panel.query;
 
 import java.awt.Color;
 
 import javax.swing.JPanel;
 
-public class PerformanceQueryPanel extends JPanel {
+public class QueryPerformancePanel extends JPanel {
 	private JPanel backpane;
 	
 	
 	
 	
-	public PerformanceQueryPanel(){
+	public QueryPerformancePanel(){
 		init();
 	}
 	

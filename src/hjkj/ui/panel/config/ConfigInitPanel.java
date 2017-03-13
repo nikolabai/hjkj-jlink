@@ -1,6 +1,4 @@
-package hjkj.ui.panel;
-
-import java.awt.TextField;
+package hjkj.ui.panel.config;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;

@@ -1,17 +1,17 @@
-package hjkj.ui.panel;
+package hjkj.ui.panel.query;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JPanel;
 
-public class LinkStatusPanel extends JPanel{
+public class QueryLinkPanel extends JPanel{
     private JPanel backpane;
 	
 	
 	
 	
-	public LinkStatusPanel(){
+	public QueryLinkPanel(){
 		init();
 	}
 	
