@@ -2,8 +2,8 @@ package hjkj.bean;
 
 public class ConfigAlarm {
 
+	private byte limit;
 	public ConfigAlarm() {
-		// TODO Auto-generated constructor stub
 	}
 
 }

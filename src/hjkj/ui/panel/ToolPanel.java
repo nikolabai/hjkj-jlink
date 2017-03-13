@@ -22,7 +22,7 @@ public class ToolPanel extends JPanel implements ActionListener{
 	private void initial(){
 		this.setLayout(null);
 		
-		String[] buttonNames= { "配置管理" , "信息查询", "发送消息" };
+		String[] buttonNames= { "配置管理", "信息查询", "发送消息"};
 		this.setBounds(0, 0, 300, 20);
 		
 		configBtn = new JButton(buttonNames[0]);
