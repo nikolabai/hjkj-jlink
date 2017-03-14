@@ -334,6 +334,6 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 		
 	}
 	public static void main(String[] args) {
-		new SendMsgFrame();
+		new SendMsgFrame().setVisible(true);
 	}
 }

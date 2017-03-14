@@ -2,6 +2,7 @@ package hjkj.server;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketException;
+import java.util.Arrays;
 
 /**
  * Created by YUB on 17/3/13.
@@ -23,7 +24,7 @@ public class Server extends Thread
     {
         try
         {
-            socket = new DatagramSocket(8000);
+            socket = new DatagramSocket(8088);
         }
         catch (SocketException e1)
         {
@@ -38,6 +39,7 @@ public class Server extends Thread
                 byte[] buf = new byte[35100];
                 receivePacket = new DatagramPacket(buf,buf.length);
                 socket.receive(receivePacket);
+//                System.out.println("服务端接收数据" + receivePacket.getData());
 
                 //发送
                 int dataLength = receivePacket.getLength();
@@ -59,6 +61,7 @@ public class Server extends Thread
         //原路转发回去
         sendPacket = new DatagramPacket(data,data.length,receivePacket.getAddress(),receivePacket.getPort());
         socket.send(sendPacket);
+        System.out.println("服务端原路返回数据" + Arrays.toString(data));
     }
 }
 

@@ -9,11 +9,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-import hjkj.ui.panel.main.AccessPanel;
-import hjkj.ui.panel.main.InfoNodePanel;
-import hjkj.ui.panel.main.InfoRcvPanel;
-import hjkj.ui.panel.main.ToolPanel;
+import hjkj.ui.panel.main.*;
 import hjkj.util.WindowMethod;
+import sun.jvm.hotspot.code.DebugInfoReadStream;
 
 /**
  * J链主面板
@@ -35,6 +33,8 @@ public class JLinkFrame{
 	private JPanel centerPanel;
 	//右二上 节点信息
 	private JPanel infoNodePanel;
+	//右二中 指挥表
+	private JPanel directTablePanel;
 	//右下 接受显示
 	private JPanel infoRcvPanel;
 	
@@ -83,12 +83,19 @@ public class JLinkFrame{
 		infoNodePanel.setBackground(Color.WHITE);
 		infoNodePanel.setBounds(730, 20, 230, 92);
 		backPanel.add(infoNodePanel);
-		
-		//接收显示
+
+		//指挥表
+		directTablePanel = new DirectTablePanel();
+		directTablePanel.setBorder(getLineBorder());
+		directTablePanel.setBackground(Color.RED);
+		directTablePanel.setBounds(730, 112, 230, 288);
+		backPanel.add(directTablePanel);
+
+		//接收显示 y:112
 		infoRcvPanel = new InfoRcvPanel();
 		infoRcvPanel.setBorder(getLineBorder());
 		infoRcvPanel.setBackground(Color.WHITE);
-		infoRcvPanel.setBounds(730, 112, 230, 488);
+		infoRcvPanel.setBounds(730, 400, 230, 200);
 		backPanel.add(infoRcvPanel);
 		
 		//主界面大小和位置设置

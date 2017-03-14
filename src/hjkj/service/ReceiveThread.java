@@ -31,7 +31,7 @@ public class ReceiveThread extends Thread{
 
 	@Override
 	public void run() {
-//		new ReveiveDispather(iStream,oStream).DataHandle();
+//		new ReceiveDispather(iStream,oStream).DataHandle();
 	}
 
 }

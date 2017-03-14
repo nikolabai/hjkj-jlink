@@ -1,5 +1,7 @@
 package hjkj.ui.panel.main;
 
+import hjkj.ui.SendMsgFrame;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,6 +40,13 @@ public class ToolPanel extends JPanel implements ActionListener{
 		
 //		this.add(toolBar);
 		this.setBackground(Color.cyan);
+
+		sendBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new SendMsgFrame().setVisible(true);
+			}
+		});
 	}
 	
 	@Override
