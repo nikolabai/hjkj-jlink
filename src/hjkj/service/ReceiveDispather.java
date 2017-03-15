@@ -51,8 +51,6 @@ public class ReceiveDispather {
 //                    SaveObject.getMainMethod().addListener();
 //                    SaveObject.getMainMethod().startProcedure();
 //                }
-//
-//                // TODO
 //                SendFakeTopu.sendFakeTopu();
 //            }
 //            break;

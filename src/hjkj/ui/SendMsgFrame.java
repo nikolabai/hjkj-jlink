@@ -21,6 +21,16 @@ import javax.swing.JTextField;
  */
 
 public class SendMsgFrame extends JFrame implements ActionListener{
+
+	//单例
+	private static SendMsgFrame sendMsgFrame;
+	public static SendMsgFrame getInstance(){
+		if(sendMsgFrame == null){
+			sendMsgFrame = new SendMsgFrame();
+		}
+		return sendMsgFrame;
+	}
+
 	private JPanel paneltop;
 	private JPanel panelcenter;
 	private JPanel panelbottom;
