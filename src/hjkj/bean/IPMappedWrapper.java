@@ -4,8 +4,9 @@ package hjkj.bean;
  * Created by YUB on 17/3/15.
  * IP映射
  */
-public class IPMapped {
-    //端机号
+public class IPMappedWrapper {
+
+    //端机号 未完成
     private byte info;
 
     //链路类型

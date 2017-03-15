@@ -6,7 +6,7 @@ import hjkj.util.DataManage;
  * Created by YUB on 17/3/15.
  * 转发指挥表
  */
-public class DirectTable {
+public class ReDirectWrapper {
 
     //            转发源ID航迹号
     private byte src;
