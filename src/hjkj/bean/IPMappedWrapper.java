@@ -6,29 +6,46 @@ package hjkj.bean;
  */
 public class IPMappedWrapper {
 
-    //端机号 未完成
-    private byte info;
-
-    //链路类型
+    //端机号 链路类型 预留
+    private byte unit;
 
     //ip号
+    private byte ipNumber;
 
     //源航迹号或源地址ID
-    private byte src;
+    private byte sourceAddress;
 
-    public byte getInfo() {
-        return info;
+    //转化为数组
+    public byte[] getBytes() {
+        byte[] bytes = new byte[3];
+        int index = 0;
+        bytes[index++] = unit;
+        bytes[index++] = ipNumber;
+        bytes[index++] = sourceAddress;
+        return bytes;
     }
 
-    public void setInfo(byte info) {
-        this.info = info;
+    public byte getUnit() {
+        return unit;
     }
 
-    public byte getSrc() {
-        return src;
+    public void setUnit(byte unit) {
+        this.unit = unit;
     }
 
-    public void setSrc(byte src) {
-        this.src = src;
+    public byte getIpNumber() {
+        return ipNumber;
+    }
+
+    public void setIpNumber(byte ipNumber) {
+        this.ipNumber = ipNumber;
+    }
+
+    public byte getSourceAddress() {
+        return sourceAddress;
+    }
+
+    public void setSourceAddress(byte sourceAddress) {
+        this.sourceAddress = sourceAddress;
     }
 }

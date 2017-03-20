@@ -17,16 +17,21 @@ public class Header {
     //优先级
     private byte priority;
     //生存周期
-    public byte lifeTime;
+    private byte lifeTime;
     //命令类型
-    public short cmd;
+    private short cmd;
     //数据长度
-    public short length;
+    private short length;
     //端机类型（2bit)、链路类型(2bit)、IP映射数（4bit)
-    public byte type;
-    //预留位
-    public byte obligate;
+    private byte type;
 
+
+    //IP映射数
+    private byte IPNumber;
+//    //数据（负载）
+//    private byte[] payLoad;
+//    //数据校验
+//    private byte CRC;
     //转化为数组
     public byte[] getBytes() {
         byte[] bytes = new byte[12];
@@ -42,7 +47,7 @@ public class Header {
         System.arraycopy(DataManage.shortToBytes(length), 0, bytes, index, 2);
         index += 2;
         bytes[index++] = type;
-        bytes[index++] = obligate;
+        bytes[index++] = IPNumber;
 
         return bytes;
     }
@@ -110,12 +115,15 @@ public class Header {
     public void setType(byte type) {
         this.type = type;
     }
-
-    public byte getObligate() {
-        return obligate;
+    public byte getIPNumber() {
+        return IPNumber;
     }
 
-    public void setObligate(byte obligate) {
-        this.obligate = obligate;
+    public void setIPNumber(byte IPNumber) {
+        this.IPNumber = IPNumber;
     }
+
+
+
+
 }
