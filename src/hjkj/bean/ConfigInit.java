@@ -15,6 +15,10 @@ public class ConfigInit {
     // 是否为时间基准
     private byte isNTR;
 
+    public ConfigInit() {
+
+    }
+
     //转化为数组
     public byte[] getBytes() {
         byte[] bytes = new byte[4];

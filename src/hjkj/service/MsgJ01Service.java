@@ -54,13 +54,13 @@ public class MsgJ01Service extends BaseService implements Runnable{
     }
 
 
-    public static void main(String[] args) throws UnknownHostException {
-
-        MsgJ01ServiceTest msgJ01Service = new MsgJ01ServiceTest(InetAddress.getByName("localhost"),8088);
-
-        Thread thread = new Thread(msgJ01Service);
-        thread.start();
-
-    }
+//    public static void main(String[] args) throws UnknownHostException {
+//
+//        MsgJ01ServiceTest msgJ01Service = new MsgJ01ServiceTest(InetAddress.getByName("localhost"),8088);
+//
+//        Thread thread = new Thread(msgJ01Service);
+//        thread.start();
+//
+//    }
 
 }

@@ -6,14 +6,8 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
+import javax.swing.*;
+
 /**
  * 
  * @author hj Gavin
@@ -35,7 +29,7 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 	private JPanel panelcenter;
 	private JPanel panelbottom;
 	//中间组件
-	private JRadioButton radio1;
+	private JLabel skymsg;
 	private JRadioButton radio11;
 	private JRadioButton radio12;
 	private JRadioButton radio13;
@@ -64,7 +58,7 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 	private JLabel label117;
 	private JLabel label118;
 	//南部组件
-	private JRadioButton radio2;
+	private JLabel landmsg;
 	private JRadioButton radio21;
 	private JRadioButton radio22;
 	private JRadioButton radio23;
@@ -103,11 +97,16 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 	private JList<Integer> list1;
 	//北部组件
 	private JLabel label31;
-	private JLabel label32;
+//	private JLabel label32;
 	private JTextField textField31;
-	private JTextField textField32;
+//	private JTextField textField32;
 	private JButton  button31;
-	private JButton  button32;
+//	private JButton  button32;
+	private ButtonGroup bgcenterleft;
+	private ButtonGroup bgcenterright;
+	private ButtonGroup bgsouthleft;
+	private ButtonGroup bgsouthright;
+
 	
 	//构造方法
 	public SendMsgFrame() {
@@ -117,7 +116,7 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 	private void init(){
 		this.setLayout(new BorderLayout());
 		setBounds(400, 100, 650, 500);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		//北部布局
 		paneltop = new JPanel();
 		paneltop.setPreferredSize(new Dimension(0,100));
@@ -127,22 +126,22 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 		label31 = new JLabel("目的航记号");
 		label31.setBounds(20, 20, 100, 20);
 		paneltop.add(label31);
-		label32 = new JLabel("文本内容");
-		label32.setBounds(20, 40, 100, 20);
-		paneltop.add(label32);
+//		label32 = new JLabel("文本内容");
+//		label32.setBounds(20, 40, 100, 20);
+//		paneltop.add(label32);
 		textField31 = new JTextField();
 		textField31.setBounds(120, 20, 100, 20);
 		paneltop.add(textField31);
-		textField32 = new JTextField();
-		textField32.setBounds(120, 40, 100, 20);
-		paneltop.add(textField32);
+//		textField32 = new JTextField();
+//		textField32.setBounds(120, 40, 100, 20);
+//		paneltop.add(textField32);
 		
-		button31 = new JButton("but1");
+		button31 = new JButton("确定");
 		button31.setBounds(320, 20, 60, 20);
 		paneltop.add(button31);
-		button32 = new JButton("but2");
-		button32.setBounds(320, 40, 60, 20);
-		paneltop.add(button32);
+//		button32 = new JButton("but2");
+//		button32.setBounds(320, 40, 60, 20);
+//		paneltop.add(button32);
 				
 				
 				
@@ -151,22 +150,29 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 		panelcenter.setLayout(null);
 		add(panelcenter,BorderLayout.CENTER);
 		
-		radio1= new JRadioButton("PPLI空中消息");
-		radio1.setBounds(0, 0, 200, 20);
-		panelcenter.add(radio1);
-		
+		skymsg= new JLabel("PPLI空中消息");
+		skymsg.setBounds(20, 0, 200, 20);
+		panelcenter.add(skymsg);
+
+
 		radio11= new JRadioButton("北纬");
 		radio11.setBounds(0, 50, 80, 20);
 		panelcenter.add(radio11);
 		radio12= new JRadioButton("南纬");
 		radio12.setBounds(0, 70, 80, 20);
 		panelcenter.add(radio12);
+		bgcenterleft =new ButtonGroup();
+		bgcenterleft.add(radio11);
+		bgcenterleft.add(radio12);
 		radio13= new JRadioButton("东经");
 		radio13.setBounds(300, 50, 80, 20);
 		panelcenter.add(radio13);
 		radio14= new JRadioButton("西经");
 		radio14.setBounds(300, 70, 80, 20);
 		panelcenter.add(radio14);
+		bgcenterright =new ButtonGroup();
+		bgcenterright.add(radio13);
+		bgcenterright.add(radio14);
 		
 		label11= new JLabel("时间质量");
 		label11.setBounds(20, 30, 100, 20);
@@ -240,9 +246,9 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 		panelbottom.setLayout(null);
 		add(panelbottom, BorderLayout.SOUTH);
 		
-		radio2= new JRadioButton("PPLI陆地消息");
-		radio2.setBounds(0, 0, 200, 20);
-		panelbottom.add(radio2);
+		landmsg= new JLabel("PPLI陆地消息");
+		landmsg.setBounds(20, 0, 200, 20);
+		panelbottom.add(landmsg);
 		
 		radio21= new JRadioButton("北纬");
 		radio21.setBounds(0, 50, 80, 20);
@@ -250,13 +256,20 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 		radio22= new JRadioButton("南纬");
 		radio22.setBounds(0, 70, 80, 20);
 		panelbottom.add(radio22);
+		bgsouthleft =new ButtonGroup();
+		bgsouthleft.add(radio21);
+		bgsouthleft.add(radio22);
+
 		radio23= new JRadioButton("东经");
 		radio23.setBounds(300, 50, 80, 20);
 		panelbottom.add(radio23);
 		radio24= new JRadioButton("西经");
 		radio24.setBounds(300, 70, 80, 20);
 		panelbottom.add(radio24);
-		
+		bgsouthright =new ButtonGroup();
+		bgsouthright.add(radio23);
+		bgsouthright.add(radio24);
+
 		label21= new JLabel("字标识");
 		label21.setBounds(20, 30, 100, 20);
 		panelbottom.add(label21);

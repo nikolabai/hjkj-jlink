@@ -11,7 +11,6 @@ import javax.swing.border.Border;
 
 import hjkj.ui.panel.main.*;
 import hjkj.util.WindowMethod;
-import sun.jvm.hotspot.code.DebugInfoReadStream;
 
 /**
  * J链主面板
@@ -35,7 +34,7 @@ public class JLinkFrame{
 	private JPanel infoNodePanel;
 	//右二中 指挥表
 	private JPanel directTablePanel;
-	//右下 接受显示
+	//右下 接收显示
 	private JPanel infoRcvPanel;
 	
 	public JLinkFrame(){
@@ -92,7 +91,7 @@ public class JLinkFrame{
 		backPanel.add(directTablePanel);
 
 		//接收显示 y:112
-		infoRcvPanel = new InfoRcvPanel();
+		infoRcvPanel = new IPMappingPanel();
 		infoRcvPanel.setBorder(getLineBorder());
 		infoRcvPanel.setBackground(Color.WHITE);
 		infoRcvPanel.setBounds(730, 400, 230, 200);
