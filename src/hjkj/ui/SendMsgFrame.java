@@ -1,10 +1,13 @@
 
 package hjkj.ui;
 
+import hjkj.service.MsgJ01Service;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.UnknownHostException;
 
 import javax.swing.*;
 
@@ -14,7 +17,7 @@ import javax.swing.*;
  *
  */
 
-public class SendMsgFrame extends JFrame implements ActionListener{
+public class SendMsgFrame extends JFrame{
 
 	//单例
 	private static SendMsgFrame sendMsgFrame;
@@ -90,7 +93,7 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 	private JLabel label218;
 	private JLabel label219;
 	
-	private JButton but1;
+	private JButton ppli1ConfirmBtn;
 	private JButton but2;
 	
 	private JScrollPane  scrollPane;
@@ -100,7 +103,7 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 //	private JLabel label32;
 	private JTextField textField31;
 //	private JTextField textField32;
-	private JButton  button31;
+	private JButton j01ConfirmBtn;
 //	private JButton  button32;
 	private ButtonGroup bgcenterleft;
 	private ButtonGroup bgcenterright;
@@ -123,7 +126,7 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 		paneltop.setLayout(null);
 		this.add(paneltop,BorderLayout.NORTH);
 	
-		label31 = new JLabel("目的航记号");
+		label31 = new JLabel("目的航迹号");
 		label31.setBounds(20, 20, 100, 20);
 		paneltop.add(label31);
 //		label32 = new JLabel("文本内容");
@@ -136,9 +139,9 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 //		textField32.setBounds(120, 40, 100, 20);
 //		paneltop.add(textField32);
 		
-		button31 = new JButton("确定");
-		button31.setBounds(320, 20, 60, 20);
-		paneltop.add(button31);
+		j01ConfirmBtn = new JButton("确定");
+		j01ConfirmBtn.setBounds(320, 20, 60, 20);
+		paneltop.add(j01ConfirmBtn);
 //		button32 = new JButton("but2");
 //		button32.setBounds(320, 40, 60, 20);
 //		paneltop.add(button32);
@@ -237,9 +240,9 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 		label118.setBounds(510, 90, 100, 20);
 		panelcenter.add(label118);
 		
-		but1 =new JButton("发送");
-		but1.setBounds(550, 120, 60, 20);
-		panelcenter.add(but1);
+		ppli1ConfirmBtn =new JButton("发送");
+		ppli1ConfirmBtn.setBounds(550, 120, 60, 20);
+		panelcenter.add(ppli1ConfirmBtn);
 		//南部布局
 		panelbottom = new JPanel();
 		panelbottom.setPreferredSize(new Dimension(0,200));
@@ -344,18 +347,28 @@ public class SendMsgFrame extends JFrame implements ActionListener{
 		label219= new JLabel("陆地身份正在移动");
 		label219.setBounds(210, 110, 150, 20);
 		panelbottom.add(label219);
-		
+
 		but2 =new JButton("发送");
 		but2.setBounds(550, 130, 60, 20);
 		panelbottom.add(but2);
-		
-		
-		
+
+		j01ConfirmBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Thread t = null;
+//				try {
+//					t = new Thread(new MsgJ01Service(getInitInfo()));
+//				} catch (UnknownHostException e1) {
+//					e1.printStackTrace();
+//				}
+//				t.start();
+			}
+		});
 	}
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		
-	}
+
+	
+
+
 	public static void main(String[] args) {
 		new SendMsgFrame().setVisible(true);
 	}

@@ -29,13 +29,13 @@ public class CMDCode {
     public static final short QUERY_ALARM = 0x0605; //节点告警查询命令
     public static final short QUERY_ALARM_REPLY = 0x060A; //节点告警查询应答
 
-    public static final short TEST_J_MESSAGE = 0x1001; //测试J0.1消息
+    public static final short MSG_J = 0x1001; //测试J0.1消息
     public static final short PPTL_BUSSINESS_MESSAGE = 0x1003; //PPLI业务消息
-    public static final short TIMESLOT_PLANNING = 0x1006; //时隙规划文件
+    public static final short CONFIG_TIMESLOT = 0x1006; //时隙规划文件
     public static final short J_PROPERTY = 0x1007; //J链的性能信息
     public static final short J_ALARM = 0x1009; //J链的告警信息
     public static final short J_REPORT = 0x100A; //J链的上报信息
-    public static final short J_INITIALISE = 0x100B; //J链初始化信息
+    public static final short CONFIG_JINIT = 0x100B; //J链初始化信息
 //    public static final short QUERY_ALARM_REPLY = ; //T链的入网判断信息
 //    public static final short QUERY_ALARM_REPLY = ; //指挥表信息
 //    public static final short QUERY_ALARM_REPLY = ; //查询路由表信息

@@ -20,7 +20,7 @@ public class MsgJ01ServiceTest extends BaseService implements Runnable{
 
     //执行父类的构造函数，传递ip与端口值
     public MsgJ01ServiceTest(InetAddress address, int port) {
-        super(address, port);
+//        super(address, port);
     }
 
     @Override

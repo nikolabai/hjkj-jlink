@@ -19,6 +19,10 @@ public class ConfigInit {
 
     }
 
+    //获取长度
+    public short getLength(){
+        return (short)4;
+    }
     //转化为数组
     public byte[] getBytes() {
         byte[] bytes = new byte[4];

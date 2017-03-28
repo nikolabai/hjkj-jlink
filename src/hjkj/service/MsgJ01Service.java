@@ -1,6 +1,11 @@
 package hjkj.service;
 
 
+import hjkj.bean.ConfigInit;
+import hjkj.bean.Header;
+import hjkj.bean.MsgJ01;
+import hjkj.data.CMDCode;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
@@ -13,54 +18,24 @@ import java.util.Arrays;
 public class MsgJ01Service extends BaseService implements Runnable{
 
     private int code;
+    private MsgJ01 msgJ01;
+    private byte[] j01Array;
 
-
-
-    //执行父类的构造函数，传递ip与端口值
-    public MsgJ01Service(InetAddress address, int port) {
-        super(address, port);
+    public MsgJ01Service(MsgJ01 msgJ01) throws UnknownHostException {
+        super();
+        this.msgJ01 = msgJ01;
     }
 
     @Override
     public void run() {
         if(createSocket()){
-
-            //封装登录时要发送的数据
-//            ClientCode.setCode(ClientCode.FILM_REQUEST);
-//            String codeString = ClientCode.getCode() + "";
-            sendData = new byte[1024];
-            //发送数据
-            try {
-                sendPacket=new DatagramPacket(sendData, sendData.length, address, port);
-                socket.send(sendPacket);
-                System.out.println("发送数据：" + Arrays.toString(sendData));
-
-            } catch (IOException e) {
-                System.out.println("发送数据失败");
-                e.printStackTrace();
-            }
-
-            //接收服务器反馈
-//            try {
-//                receiveData = new byte[10];
-//                receivePacket = new DatagramPacket(receiveData, receiveData.length);
-//                socket.receive(receivePacket);
-//                System.out.println("收到反馈数据：" + Arrays.toString(receiveData));
-//            } catch (IOException e) {
-//                System.out.println("接收数据失败");
-//                e.printStackTrace();
-//            }
+            header = new Header();
+//            header.setJHeader(CMDCode.MSG_J, msgJ01.getLength(), header.getType("X","J"), (byte)0);
+//            sendData = getSendData(header, configInit.getBytes());
+            System.out.println("发送数据：" + Arrays.toString(sendData) + "数据长度：" + sendData.length);
+            sendPacket = new DatagramPacket(sendData, sendData.length, address, port);
+            System.out.println("发送的地址是：" + address + ",端口号是：" + port);
         }
     }
-
-
-//    public static void main(String[] args) throws UnknownHostException {
-//
-//        MsgJ01ServiceTest msgJ01Service = new MsgJ01ServiceTest(InetAddress.getByName("localhost"),8088);
-//
-//        Thread thread = new Thread(msgJ01Service);
-//        thread.start();
-//
-//    }
 
 }
