@@ -1,12 +1,15 @@
 package hjkj.bean;
 
+import hjkj.util.DataManage;
+
 /**
  * Created by YUB on 17/3/10.
  * J0.1消息
  */
 public class MsgJ01 {
+
     //J消息包头
-    private byte[] JMsgHead=new byte[35];
+    private byte[] JMsgHead=new byte[5];
     //业务消息类型
     private byte dataType;
     //包序号
@@ -24,19 +27,18 @@ public class MsgJ01 {
     public byte[] getBytes() {
         byte[] bytes = new byte[1011];
         int index = 0;
-        System.arraycopy(JMsgHead,0,bytes,0,35);
-        index += 35;
+        System.arraycopy(JMsgHead,0,bytes,0,5);
+        index += 5;
         bytes[index++] = dataType;
-        System.arraycopy(frameNum,0,bytes,36,4);
+        System.arraycopy(frameNum,0,bytes,6,4);
         index += 4;
-        System.arraycopy(frameTotal,0,bytes,40,4);
+        System.arraycopy(frameTotal,0,bytes,10,4);
         index += 4;
-        System.arraycopy(dataLen,0,bytes,44,2);
+        System.arraycopy(dataLen,0,bytes,14,2);
         index += 2;
-        System.arraycopy(destTrackNumber,0,bytes,46,2);
+        System.arraycopy(destTrackNumber,0,bytes,16,2);
         index += 2;
-        System.arraycopy(data,0,bytes,40,963);
-
+        System.arraycopy(data,0,bytes,18,963);
 
         return bytes;
     }
@@ -77,9 +79,11 @@ public class MsgJ01 {
         return dataLen;
     }
 
-    public void setDataLen(byte[] dataLen) {
-        this.dataLen = dataLen;
+    //参数为j01消息除报头外的有效数据部分
+    public void setDataLen(byte[] data) {
+        this.dataLen = DataManage.intToBytes(data.length + JMsgHead.length + 1 + frameNum.length + frameTotal.length + dataLen.length + destTrackNumber.length);
     }
+
 
     public byte[] getDestTrackNumber() {
         return destTrackNumber;

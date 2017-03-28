@@ -52,6 +52,11 @@ public class Header {
         return bytes;
     }
 
+    public short getHeaderLength(){
+        return (short) 11;
+    }
+
+    //参数length指的是除了头部之外剩余部分的长度
     public Header setJHeader(short code, short length, byte type, byte ipNumber){
         Header header = new Header();
         //协议版本号写死
@@ -64,7 +69,7 @@ public class Header {
         header.setLifeTime((byte)0);
         //j链的cmd和长度可变
         header.setCmd(code);
-        header.setLength(length);
+        header.setLength((short) (length + getHeaderLength()));
         //type待修改
         header.setType(type);
         header.setIPNumber(ipNumber);

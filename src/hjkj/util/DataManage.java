@@ -101,8 +101,11 @@ public class DataManage
 		buffer.putLong(0, x);
 		return buffer.array();
 	}
-	
-	
+
+	//生成一个值全为0的byte数组
+	public static byte[] resetArray(int length){
+		return new byte[length];
+	}
 
 	
 	
