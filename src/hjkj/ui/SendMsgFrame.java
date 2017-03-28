@@ -384,7 +384,7 @@ public class SendMsgFrame extends JFrame{
 		msgJ01.setDestTrackNumber(DataManage.shortToBytes((short)Integer.parseInt(tfNorthDestination.getText())));
 		//数据内容
 		byte[] data = tfNorthText.getText().getBytes();
-		msgJ01.setData(data);
+//		msgJ01.setData(data);
 		//数据长度：报头加有效数据
 		msgJ01.setDataLen(data);
 		return msgJ01;

@@ -21,7 +21,7 @@ public class MsgJ01 {
     //目的航迹号
     private byte[] destTrackNumber = new byte[2];
     //即时消息数据
-    private byte[] data= new byte[963];
+    private char[] data= new char[963];
 
     //转化为数组
     public byte[] getBytes() {
@@ -30,15 +30,15 @@ public class MsgJ01 {
         System.arraycopy(JMsgHead,0,bytes,0,5);
         index += 5;
         bytes[index++] = dataType;
-        System.arraycopy(frameNum,0,bytes,6,4);
+        System.arraycopy(frameNum,0,bytes,5,4);
         index += 4;
-        System.arraycopy(frameTotal,0,bytes,10,4);
+        System.arraycopy(frameTotal,0,bytes,9,4);
         index += 4;
-        System.arraycopy(dataLen,0,bytes,14,2);
+        System.arraycopy(dataLen,0,bytes,13,2);
         index += 2;
-        System.arraycopy(destTrackNumber,0,bytes,16,2);
+        System.arraycopy(destTrackNumber,0,bytes,15,2);
         index += 2;
-        System.arraycopy(data,0,bytes,18,963);
+        System.arraycopy(data,0,bytes,17,963);
 
         return bytes;
     }
@@ -93,11 +93,11 @@ public class MsgJ01 {
         this.destTrackNumber = destTrackNumber;
     }
 
-    public byte[] getData() {
+    public char[] getData() {
         return data;
     }
 
-    public void setData(byte[] data) {
+    public void setData(char[] data) {
         this.data = data;
     }
 }

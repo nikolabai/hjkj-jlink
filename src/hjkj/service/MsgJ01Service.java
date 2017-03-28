@@ -31,7 +31,7 @@ public class MsgJ01Service extends BaseService implements Runnable{
         if(createSocket()){
             header = new Header();
             header.setJHeader(CMDCode.MSG_J, (short) DataManage.bytesToInt(msgJ01.getDataLen()),
-                    header.getType("X","J"), (byte)0);
+                    header.getType("X", "J"), (byte)0);
             sendData = getSendData(header, msgJ01.getBytes());
             System.out.println("发送数据sendData：" + Arrays.toString(sendData) + "数据长度：" + sendData.length
                     + "j01Array：" + Arrays.toString(msgJ01.getBytes()));
